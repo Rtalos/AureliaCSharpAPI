@@ -15,6 +15,7 @@ export class PersonApi {
 
     }
 
+    //Call to api to retrieve persons.
     getAll() {
         return this.httpClient.fetch(`${this.baseUrl}/persons`)
            .then(response => response.json());
