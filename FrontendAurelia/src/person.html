@@ -1,0 +1,15 @@
+﻿<template>
+    <h1 class="fa-th-large">${message}</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr repeat.for="person of persons">
+            <td>${person.FirstName}</td>
+            <td>${person.LastName}</td>
+            <td>${person.Age}</td>
+        </tr>
+    </table>
+</template>

@@ -1,22 +1,16 @@
 import {inject} from "aurelia-framework";
-import {PersonApi} from "person-api";
+import {Router} from "aurelia-router";
 
-@inject(PersonApi)
+@inject(Router)
 export class App {
-    message = 'Welcome to Aurelia!';
-    persons = [];
 
-    constructor(personApi) {
-        this.personApi = personApi;
-    }
+    configureRouter(config, router) {
+        config.title = 'Aurelia';
+        config.map([
+          { route:  ['', 'welcome'], name: 'welcome', moduleId: 'welcome', nav: true, title: 'Welcome' },
+          { route:  'persons', name: 'person', moduleId: 'person', nav: true, title: 'Persons' }
+        ]);
 
-    activate() {
-        this.getPersons();
-    }
-
-    getPersons() {
-        this.personApi.getAll().then(persons => {
-            this.persons = persons;
-        });
+        this.router = router;
     }
 }

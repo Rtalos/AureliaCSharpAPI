@@ -1,16 +1,10 @@
 <template>
-  <require from="../jspm_packages/github/twbs/bootstrap@3.3.6/css/bootstrap.css"></require>
-  <h1 class="fa-th-large">${message}</h1>
-    <table class="table table-striped">
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Age</th>
-        </tr>
-        <tr repeat.for="person of persons">
-            <td>${person.FirstName}</td>
-            <td>${person.LastName}</td>
-            <td>${person.Age}</td>
-        </tr>
-    </table>
+    <require from="nav-bar.html"></require>
+    <require from="bootstrap/css/bootstrap.css"></require>
+    <nav-bar router.bind="router"></nav-bar>
+    <div class="page-host">
+        <router-view></router-view>
+    </div>
 </template>
+
+
